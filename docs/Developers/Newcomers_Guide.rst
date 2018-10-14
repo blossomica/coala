@@ -192,7 +192,9 @@ Step 2. Picking Up an Issue
 ---------------------------
 
 Now it is time to pick an issue.
-It is the best way to familiarise yourself with the codebase.
+It is the best way to familiarise yourself with the codebase and the
+coala contribution guidelines.
+
 You can view `all Newcomer issues on GitHub <https://coala.io/new>`_.
 
 .. important::
@@ -206,6 +208,20 @@ You can view `all Newcomer issues on GitHub <https://coala.io/new>`_.
 The easy issues that will help you get started are labeled as
 ``difficulty/newcomer`` and are only there to give you a glimpse of what
 it's like to work with us and what the workflow is like.
+
+The coala organisation tries to have ``newcomer`` issues always available
+for people who are joining the organisation.  These newcomer issues are
+intentionally very easy.  The only objective is to give you, the newcomer,
+an opportunity to participate, and learn how to contribute according to
+the coala organisation development guidelines.
+
+coala does **not** follow the GitHub "flow" workflow, so be sure to read
+our guides carefully.  If you do not follow the coala workflow, our team
+will try to nudge you in the right direction.  If nudging isnt effective,
+your contributions will be rejected.  coala will not lower its standards,
+or changes its worflow, to accomodate you.  If you can not complete
+your issue according to our standards, it will be re-assigned to the
+next newcomer who is ready and willing to learn.
 
 Now pick an issue which isn't assigned and which you would like to fix.
 Leave a comment that you would like to be assigned to the issue. This way
