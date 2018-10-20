@@ -6,42 +6,44 @@ Quick reference
 
 Example of a good commit:
 
+We are looking at pull request `#5759 <https://github.com/coala/coala/pull/5759>`_
+
 ::
 
-    setup.py: Change bears' entrypoint
+    Haskell.py: Add Haskell.py file
 
-    This entrypoint ensures that coala discovers
-    the bears correctly.
-    It helps not writing more functions inside
-    ``coalib`` for this.
+    Add a new python file in coalib/bearlib/languages/definitions/Haskell.py
 
-    Closes https://github.com/coala/coala/issues/5861
+    Closes https://github.com/coala/coala/issues/5330
 
-- `setup.py: Change bears' entrypoint`: Describe the change in
+- `Haskell.py: Add Haskell.py file`: Describe the change in
    maximum of 50 characters.
 
-- `This entrypoint.. ..for this`: Describe the reasoning of your changes
+- `Add a new python file in.. ..Haskell.py`: Describe the reasoning of your changes
    in maximum of 72 characters per line.
 
-- `Closes https://github.com/coala/coala/issues/5861`: Mention the URL
+- `Closes https://github.com/coala/coala/issues/5330`: Mention the URL
    of the issue it closes or fixes.
+   
+We are now looking at pull request `#5789 <https://github.com/coala/coala/pull/5789>`_
 
 ::
 
-    configure.py: Fix docstring typo
+    ConfParserTest.py: Fix typos in comments
 
-    This fixes the typo and changes
-    it from wether --> whether.
+    This fixes multiple occurences of typos in the comments
+    omment --> comment
+    inexistent --> non-existent
 
-    Closes https://github.com/coala/coala/issues/4018
+    Fixes https://github.com/coala/coala/issues/5785
 
-- `configure.py: Fix docstring typo`: Describe the change in
+- `ConfParserTest.py: Fix typos in comments`: Describe the change in
    maximum of 50 characters.
 
-- `This fixes.. ..whether.`: Describe the reasoning of your changes
+- `This fixes.. ..non-existent`: Describe the reasoning of your changes
    in maximum of 72 characters per line.
 
-- `Closes https://github.com/coala/coala/issues/4018`: Mention the URL
+- `Fixes https://github.com/coala/coala/issues/5785`: Mention the URL
    of the issue it closes or fixes.
 
 
@@ -74,12 +76,11 @@ Example:
 
 ::
 
-    setup.py: Change bears' entrypoint
+    Haskell.py: Add Haskell.py file
 
-    This entrypoint ensures that coala discovers the bears correctly.
-    It helps not writing more functions inside ``coalib`` for this.
+    Add a new python file in coalib/bearlib/languages/definitions/Haskell.py
 
-    Closes https://github.com/coala/coala/issues/5861
+    Closes https://github.com/coala/coala/issues/5330
 
 Shortlog
 ~~~~~~~~
@@ -88,7 +89,7 @@ Example:
 
 ::
 
-    setup.py: Change bears' entrypoint
+    Haskell.py: Add Haskell.py file
 
 .. _50:
 
@@ -118,9 +119,8 @@ Example:
 
 ::
 
-    This entrypoint ensures that coala discovers the bears correctly.
-    It helps not writing more functions inside ``coalib`` for this.
-
+    Add a new python file in coalib/bearlib/languages/definitions/Haskell.py
+    
 .. _72:
 
 -  | Maximum of 72 chars excluding newline for *each* line.
@@ -142,7 +142,7 @@ Example:
 
 ::
 
-    Fixes https://github.com/coala/coala/issues/5861
+    Closes https://github.com/coala/coala/issues/5330
 
 -  Should use the ``Fixes`` keyword if your commit fixes a bug, or ``Closes``
    if it adds a feature/enhancement.
@@ -173,52 +173,61 @@ Example:
 More Examples
 ~~~~~~~~~~~~~
 
-Example 1 (fixed bug):
+Example 1 (fixed bug and added enhacement):
+Pull request `#4217 <https://github.com/coala/coala/pull/4217>`_
 
 ::
 
-    setup: Install .coafile via package_data
+    Diff.py: Remove has_changes and fix __bool__ 
 
-    When installing the .coafile to distutils.sysconfig.get_python_lib, we
-    ignore that this is not the installation directory in every case. Thus
-    it is easier, more reliable and platform independent to let distutils
-    install it by itself.
+    Removes the self.has_changes property, since its functionality can be
+    accessed from the bool conversion.
+    Fixes inconstency of __bool__ that results from looking at
+    self._changes:
+    removing one line, then adding the same content again resulted in
+    bool(diff) == True, instead of False.
 
-    Fixes https://github.com/coala/coala/issues/269
+    __bool__ now uses the mechanism that was employed by has_changes, to
+    fix this bug.
+
+    Closes https://github.com/coala/coala/issues/4178
 
 Example 2 (implemented feature):
+Pull request `#435 <https://github.com/coala/projects/pull/435>`_
 
 ::
 
-    Linter: Output command on debug
+    Update the CI1, CI2 , & CI3 tasks to refer to 2017
 
-    This massively helps debugging linters.
+    This commit changes all occurrences of 2016 to 2017 and the project
+    links with the new ones in use_coala.md, use_coala_2.md and
+    use_coala_3.md.
 
-    Closes https://github.com/coala/coala/issues/2060
+    Closes https://github.com/coala/projects/issues/433
 
 Example 3 (fixed typo):
+Pull request `#5789 <https://github.com/coala/coala/pull/5789>`_
 
 ::
 
-    ConsoleInteraction.print_result: Fix docstring typo
+    ConfParserTest.py: Fix typos in comments
 
-    wether --> whether.
+    This fixes multiple occurences of typos in the comments
+    omment --> comment
+    inexistent --> non-existent
 
-    Closes https://github.com/coala/coala/issues/4018
+    Fixes https://github.com/coala/coala/issues/5785
 
 Example 4 (related to):
+Pull request `#5624 <https://github.com/coala/coala/pull/5624>`_
 
 ::
 
-    CI: Workaround sphinx error with docutils 0.14rc1
+    .moban.yaml: Add cached_property
+    
+    This was omitted from 54622c2.
 
-    sphinx raises an exception when trying to parse the
-    docutils version 0.14rc1.
-
-    This is a temporary workaround until docutils version 0.14 is
-    released or Sphinx 1.7 is released with the fix.
-
-    Related to https://github.com/coala/coala/issues/4280
+    Related to https://github.com/coala/coala/pull/5618
 
 Editing Commit Messages
 -----------------------
